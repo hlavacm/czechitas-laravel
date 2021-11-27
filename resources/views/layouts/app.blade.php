@@ -70,6 +70,12 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('pages.edit', ['page' => request()->route('page')]) }}">{{ __('Edit') }}</a>
                                 </li>
+                                <li class="nav-item">
+                                    <form method="POST" action="{{ route('pages.destroy', ['page' => request()->route('page')]) }}">
+                                        @csrf
+                                        <button type="submit" class="nav-link btn">{{ __('Delete') }}</button>
+                                    </form>
+                                </li>
                             @endif
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a>

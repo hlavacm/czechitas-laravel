@@ -82,4 +82,13 @@ class PageController extends Controller
 
         return redirect()->route("pages.show", ["page" => $page->slug]);
     }
+
+    public function destroy(Page $page)
+    {
+        $page->delete();
+
+        session()->flash("status", "The page was successfully deleted!");
+
+        return redirect()->route("dashboard");
+    }
 }
