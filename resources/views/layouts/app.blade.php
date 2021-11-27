@@ -25,7 +25,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand text-primary" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -64,21 +64,21 @@
                             @endif
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('pages.create') }}">{{ __('Create') }}</a>
+                                <a class="nav-link" href="{{ route('pages.create') }}"><i class="bi bi-plus-circle-fill"></i></a>
                             </li>
                             @if (request()->routeIs('pages.show'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('pages.edit', ['page' => request()->route('page')]) }}">{{ __('Edit') }}</a>
+                                    <a class="nav-link" href="{{ route('pages.edit', ['page' => request()->route('page')]) }}"><i class="bi bi-pencil-square"></i></a>
                                 </li>
                                 <li class="nav-item">
                                     <form method="POST" action="{{ route('pages.destroy', ['page' => request()->route('page')]) }}">
                                         @csrf
-                                        <button type="submit" class="nav-link btn">{{ __('Delete') }}</button>
+                                        <button type="submit" class="nav-link btn"><i class="bi bi-trash-fill"></i></button>
                                     </form>
                                 </li>
                             @endif
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a>
+                                <a class="nav-link" href="{{ route('dashboard') }}"><i class="bi bi-speedometer"></i></a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
