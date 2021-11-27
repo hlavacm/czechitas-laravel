@@ -24,3 +24,5 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::get('/pages/{page}', [PageController::class, 'show'])->name('pages.show');
+
+Route::post('/pages/contact', [PageController::class, 'contact'])->name('pages.contact');

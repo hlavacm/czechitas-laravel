@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Page;
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactFormRequest;
 
 class PageController extends Controller
 {
@@ -18,5 +19,10 @@ class PageController extends Controller
         return view('pages.show', [
             'page' => $page,
         ]);
+    }
+
+    public function contact(ContactFormRequest $request)
+    {
+        dd($request->all());
     }
 }

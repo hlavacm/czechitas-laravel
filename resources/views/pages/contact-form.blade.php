@@ -1,4 +1,4 @@
-<form>
+<form method="POST" action="{{ route('pages.contact') }}">
     @csrf
     <div class="form-group">
         <label for="name-field">{{ __('Name:*') }}</label>
