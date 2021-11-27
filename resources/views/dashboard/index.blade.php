@@ -14,7 +14,11 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    <ul>
+                        @foreach ($pages as $page)
+                            <li>{{ $page->title }}</li>
+                        @endforeach
+                    </ul>
                 </div>
             </div>
         </div>
