@@ -20,4 +20,14 @@ class Page extends Model
         'description',
         'content',
     ];
+
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }
