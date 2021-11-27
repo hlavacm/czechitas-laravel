@@ -27,7 +27,7 @@
     <div class="form-group">
         <label for="subject-field">{{ __('Subject:*') }}</label>
         <input id="subject-field" name="subject" type="text" class="form-control @error('subject') is-invalid @enderror"
-            maxlength="150" value="{{ old('title') }}">
+            maxlength="150" value="{{ old('subject') }}">
         @error('subject')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror

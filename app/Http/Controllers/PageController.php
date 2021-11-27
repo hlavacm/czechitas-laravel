@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Page;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactFormRequest;
 
@@ -23,6 +24,12 @@ class PageController extends Controller
 
     public function contact(ContactFormRequest $request)
     {
-        dd($request->all());
+        $data = $request->only(["name", "email", "subject", "message"]);
+
+        Contact::create($data);
+
+        session()->flash("status", "Contact form was successfully sent!");
+
+        return redirect()->back();
     }
 }
