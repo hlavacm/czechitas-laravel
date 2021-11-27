@@ -64,6 +64,14 @@
                             @endif
                         @else
                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('pages.create') }}">{{ __('Create') }}</a>
+                            </li>
+                            @if (request()->routeIs('pages.show'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('pages.edit', ['page' => request()->route('page')]) }}">{{ __('Edit') }}</a>
+                                </li>
+                            @endif
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a>
                             </li>
                             <li class="nav-item dropdown">
